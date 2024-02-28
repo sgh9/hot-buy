@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useCallback } from 'react';
+import React, { ChangeEvent, Suspense, useCallback } from 'react';
 import Accordian from './Accordian';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCreateQueryString } from '../hooks/useCreateQueryString';
@@ -82,6 +82,7 @@ const FilterProducts: React.FunctionComponent<IFilterProductsProps> = (props) =>
   }
 
   return (
+    <Suspense>
     <div className='card p-4 w-full'>
       <div className="flex flex-col w-full">
         {filterOptions.map(acordian=> {
@@ -110,6 +111,7 @@ const FilterProducts: React.FunctionComponent<IFilterProductsProps> = (props) =>
         })}
       </div>
     </div>
+    </Suspense>
   ) ;
 };
 

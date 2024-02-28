@@ -1,7 +1,7 @@
 import {  Dispatch, FC, ReactNode, createContext, useContext, useReducer } from "react";
 
 interface IAppContexProvider {
-    children: ReactNode | undefined,
+    children: ReactNode ,
 }
 
 interface IAction {

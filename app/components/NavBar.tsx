@@ -64,7 +64,7 @@ const NavBar: React.FunctionComponent<INavBarProps> = ({
                   
               </PopoverContent>
             </Popover>
-            <Link href={`${window.location.origin}/products/cart`}>
+            <Link href={`/products/cart`}>
                 <div className="flex ">
                   <CgShoppingCart size={20} style={{marginInline: "auto"}}/> 
                     { getCartCount() ? <span className='ml-2 rounded-full px-1.5 font-xs text-white bg-blue-500'>{getCartCount() }</span> : null} 

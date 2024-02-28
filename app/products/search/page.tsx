@@ -1,6 +1,6 @@
 "use client";
 import FilterProducts from '@/app/components/FilterProducts';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Products from '@/app/components/Products';
 import { IProductCardProps } from '@/app/components/ProductCard';
 import Loader from '@/app/components/Loader';
@@ -36,6 +36,7 @@ const Search: React.FunctionComponent<ISearchProps> = (props) => {
   if(loading) return <Loader/>
 
   return (
+    <Suspense>
         <section className="flex gap-5">
         <div className="md:w-1/4 w-full">
           <FilterProducts />
@@ -44,6 +45,7 @@ const Search: React.FunctionComponent<ISearchProps> = (props) => {
           <Products products={products}/>
         </div>
         </section>
+    </Suspense>
   ) ;
 };
 

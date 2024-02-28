@@ -14,7 +14,7 @@ const CartProducts: React.FunctionComponent<ICartProductsProps> = (props) => {
             <div className="flex flex-col gap-4 w-2/3">
                 {
                     cartProducts.length > 0 && cartProducts.map(product => (
-                        <div className="flex gap-5 items-center justify-start border-b-2 border-blue-600">
+                        <div key={product._id} className="flex gap-5 items-center justify-start border-b-2 border-blue-600">
                             <div className="w-12">
                                 <Image src={product.src} alt={product.title} height={0} sizes='100vw' width={0} className='w-full h-auto'/>
                             </div>

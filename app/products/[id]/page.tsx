@@ -3,6 +3,7 @@
 import Loader from '@/app/components/Loader';
 import { IProductCardProps } from '@/app/components/ProductCard';
 import ProductDetails from '@/app/components/ProductDetails';
+import { getApiUrl } from '@/app/utils/util';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -31,7 +32,7 @@ const SingleProductDetails: React.FunctionComponent<ISingleProductDetailsProps> 
 
     const getProduct = async(id: string | string[])=> {
       try {
-        const res = await fetch(`http://localhost:3000/api/products/${id}`, { cache: 'no-store' });
+        const res = await fetch(`${getApiUrl()}/products/${id}`, { cache: 'no-store' });
         const data = await res.json();
         const { product } = data;
         setProduct(product) ;
